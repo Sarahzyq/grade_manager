@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+        <title>成绩管理系统</title>
+</head>
+<body>
+        <h1>学生成绩</h1>
+	<table border="1" style="width:300px;" >
+		<tr>
+			<th>班级</th>
+			<th>姓名</th>
+			<th>总成绩</th>
+			<th>平均分</th>
+		</tr>
+	{% for i in grade %}
+		<tr>	
+			<td>{{i.0}}</td>
+			<td>{{i.1}}</td>
+			<td>{{i.2}}</td>
+			<td>{{i.3}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+	
+	<h1>单科平均成绩</h1>
+        <table border="1" style="width:300px;" >
+                <tr>
+                        <th>科目</th>
+                        <th>平均分</th>
+                </tr>
+        {% for i in single %}
+                <tr>
+                        <td>{{i.0}}</td>
+                        <td>{{i.1}}</td>
+                </tr>
+        {% endfor %}
+        </table>
+
+	<h1>总成绩最高</h1>
+	<table border="1" style="width:300px;" >
+		<tr>
+			<th>班级</th>
+			<th>姓名</th>
+			<th>总成绩</th>
+			<th>平均分</th>
+		</tr>
+		<tr>	
+			<td>{{higher.0}}</td>
+			<td>{{higher.1}}</td>
+			<td>{{higher.2}}</td>
+			<td>{{higher.3}}</td>
+		</tr>
+	</table>
+
+	<h1>单科平均最高成绩</h1>
+        <table border="1" style="width:300px;" >
+                <tr>
+                        <th>科目</th>
+                        <th>平均分</th>
+                </tr>
+                <tr>
+                        <td>{{higher_average_course.0}}</td>
+                        <td>{{higher_average_course.1}}</td>
+                </tr>
+        </table>
+
+        <h1>单科成绩最高</h1>
+	<table border="1" style="width:300px;" >
+		<tr>
+			<th>班级</th>
+			<th>姓名</th>
+			<th>科目</th>
+			<th>成绩</th>
+		</tr>
+	{% for i in higher_single_course %}
+		<tr>	
+			<td>{{i.sid.classes}}</td>
+			<td>{{i.sid.sname}}</td>
+			<td>{{i.cid.cname}}</td>
+			<td>{{i.grade}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+</body>
+</html>

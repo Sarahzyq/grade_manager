@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+        <meta charset="utf-8">
+        <meta name="author" content="zhongyuqing">
+        <title>成绩管理系统</title>
+</head>
+<body>
+        <h1>奖学金统计</h1>
+	<table border="1" style="width:400px;" >
+		<tr>
+			<th>姓名</th>
+			<th>班级</th>
+			<th>奖学金等级</th>
+			<th>奖金</th>
+		</tr>
+	{% for i in st %}
+		<tr>	
+			<td>{{i.0}}</td>
+			<td>{{i.1}}</td>
+			<td>{{i.2}}</td>
+			<td>{{i.3}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+</body>
+</html>
+
+
